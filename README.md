@@ -22,4 +22,4 @@ LED_ON : echo '1' > /dev/myled0
 
 LED_OFF: echo '0' > /dev/myled0
 
-実験動画：https://youtu.be/1aJdNM585Eg
+デモ：https://youtu.be/1aJdNM585Eg
