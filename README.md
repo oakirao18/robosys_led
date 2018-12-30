@@ -6,6 +6,8 @@
 
 ・raspberryPI 3 B+
 
+　 ・raspbian
+
 ・抵抗 150　オーム
 
 ・赤色LED
