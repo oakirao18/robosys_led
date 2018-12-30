@@ -4,6 +4,8 @@
 #include <linux/device.h>
 #include <linux/uaccess.h>
 #include <linux/io.h>
+#include <linux/delay.h>
+
 
 MODULE_AUTHOR("akira ikeda");
 MODULE_DESCRIPTION("driver for LED");
@@ -19,15 +21,25 @@ static volatile u32 *gpio_base = NULL;
 static ssize_t led_write(struct file* flip,const char* buf,size_t count,loff_t* pos){
 
 	char c;
+	
+
 	if(copy_from_user(&c,buf,sizeof(char)))
 	return -EFAULT;
-
-	if(c == '0')
+	
+	if(c == '0'){
 		gpio_base[10] = 1 << 25;
-	else if(c == '1')
-		gpio_base[7] = 1<< 25;
-
-
+	}else if(c == '1'){
+		int i=0;
+		while(i < 8){
+		gpio_base[10] = 1 << 25;
+		mdelay(200);
+		gpio_base[7] = 1 << 25;
+		mdelay(200);
+		i++;
+		}
+	}
+	
+	
 	printk(KERN_INFO "receive %c\n",c);
 	printk(KERN_INFO "led_write is called\n");
 	return 1;
@@ -49,11 +61,13 @@ static ssize_t sushi_read(struct file* flip,char* buf,size_t count,loff_t* pos){
 
 static struct file_operations led_fops = {
 
+
 	.owner = THIS_MODULE,
 	.write = led_write,
 	.read = sushi_read
 
 };
+
 
 static int __init init_mod(void){
 
