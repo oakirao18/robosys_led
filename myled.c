@@ -9,7 +9,7 @@
 
 MODULE_AUTHOR("akira ikeda");
 MODULE_DESCRIPTION("driver for LED");
-MODULE_LICENSE("GPL");
+MODULE_LICENSE("MIT License");
 MODULE_VERSION("0.1");
 
 static dev_t dev;
