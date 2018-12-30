@@ -52,7 +52,7 @@ echo '0' > /dev/myled0
 ```
 ## Author
 
-[Ryuichi Ueda](https://github.com/ryuichiueda)
+//[Ryuichi Ueda](https://github.com/ryuichiueda)
 
 ## Licence
 
