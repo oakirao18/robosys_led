@@ -2,6 +2,13 @@
 
 LEDを点滅させるデバイスドライバ
 
+## Demo
+
+https://youtu.be/1aJdNM585Eg
+
+
+## Description
+
 使用したものは以下の通りです。
 
 ・raspberryPI 3 B+
@@ -12,14 +19,21 @@ LEDを点滅させるデバイスドライバ
 
 ・赤色LED
 
-22番ピンからON/OFFの信号を発生させるデバイスドライバを作成した。
+22番ピンからON/OFFの信号を発生させることができる。
 
-ONの時は数度点滅するようにした。
+ONの時は数度点滅する。
 
-## 
+
+## Usage
 
 LED_ON : echo '1' > /dev/myled0
 
 LED_OFF: echo '0' > /dev/myled0
 
-デモ：https://youtu.be/1aJdNM585Eg
+## Author
+
+[Ryuichi Ueda](https://github.com/ryuichiueda)
+
+## Licence
+
+[GPL](https://www.gnu.org/licenses/gpl-3.0.ja.html)
