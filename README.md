@@ -9,6 +9,10 @@ https://youtu.be/1aJdNM585Eg
 
 ## Description
 
+22番ピンからON/OFFの信号を発生させることができる。
+
+ONの時は数度点滅する。
+
 使用したものは以下の通りです。
 
 ・raspberryPI 3 B+
@@ -19,17 +23,33 @@ https://youtu.be/1aJdNM585Eg
 
 ・赤色LED
 
-22番ピンからON/OFFの信号を発生させることができる。
+・ブレッドボード
 
-ONの時は数度点滅する。
+・ジャンパー線
 
+## Install
+
+```
+git clone https://github.com/oakirao18/robosys_led.git
+```
 
 ## Usage
 
-LED_ON : echo '1' > /dev/myled0
+```
+make
+sudo insmod myled.ko
+sudo chmod 666 /dev/myled0
+```
 
-LED_OFF: echo '0' > /dev/myled0
 
+LED_ON
+```
+echo '1' > /dev/myled0
+```
+LED_OFF
+```
+echo '0' > /dev/myled0
+```
 ## Author
 
 [Ryuichi Ueda](https://github.com/ryuichiueda)
