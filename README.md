@@ -50,10 +50,7 @@ LED_OFF
 ```
 echo '0' > /dev/myled0
 ```
-## Author
-<!--
-[Ryuichi Ueda](https://github.com/ryuichiueda)
--->
+
 ## Licence
 
 [GPL](https://www.gnu.org/licenses/gpl-3.0.ja.html)
